@@ -1,0 +1,49 @@
+assignment no 1
+
+
+Q1:-
+ans:-   create database assi;
+
+Q2:-
+ANS:-    create table countries
+         (country_id int,country_name varchar(50),region_id int);
+
+Q3:-
+ans:-  create table jobs
+      (job_id int primary key,job_title varchar(50) not null,min_salary int,max_salary int check(max_salary<25000));
+
+Q4:-
+ans:-  create table job_history
+    -> (employee_id int,start_date date,end_date date,job_id int,department_id int);
+
+Q5:-
+ans:-  alter table countries
+        add constraint unique(country_id);
+
+Q6:-
+ans:- CREATE TABLE jobs_default
+      (job_id INT, job_title VARCHAR(50) DEFAULT '', min_salary INT DEFAULT 8000, max_salary INT DEFAULT NULL);
+
+Q7:-
+ans:- create table department
+      (department_id decimal(4,0) not null,department_name varchar(30) not null,manager_id decimal
+      (6,0) not null,location_id decimal(4,0),primary key(department_id,manager_id));
+Q8:-
+ans:-  CREATE TABLE employees (
+    ->     employee_id INT PRIMARY KEY,
+    ->     first_name VARCHAR(50),
+    ->     last_name VARCHAR(50),
+    ->     email VARCHAR(100),
+    ->     phone_number VARCHAR(20),
+    ->     hire_date DATE,
+    ->     job_id INT,
+    ->     salary DECIMAL(10,2),
+    ->     commission DECIMAL(10,2),
+    ->     manager_id INT,
+    ->     department_id INT,
+    ->     FOREIGN KEY (department_id)
+    ->     REFERENCES departments(department_id)
+    -> );
+Q9:- part 1
+ans:- create table department_managers(
+    -> department_id decimal(4,0) not null,manager_id decimal(6,0) not null,manager_name varchar(50) not null,primary key(department_id,manager_id));
